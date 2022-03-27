@@ -20,7 +20,7 @@ int main(){
     int first = 0;
     //找第一个数
     for(int i = 0; i < num; i++){
-        if(arr[i] & loc != 0){
+        if((arr[i] & loc) != 0){
             first ^= arr[i];
         }
     }
