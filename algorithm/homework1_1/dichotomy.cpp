@@ -9,7 +9,7 @@ int main(){
     for(int i = 0; i < num; i++){
         std::cin >> arr[i];
     }
-    if((num == 0) || (find > arr[num])){
+    if((num == 0) || (find > arr[num - 1])){
         std::cout << num + 1;
         return 0;
     }

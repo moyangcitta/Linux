@@ -14,7 +14,7 @@ RM = -rm -f # 删除方式
 $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS)
 
-%o : %cpp
+%.o : %.cpp
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
