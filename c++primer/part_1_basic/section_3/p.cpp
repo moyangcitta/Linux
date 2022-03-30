@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string.h>
+#include<vector>
 void p();
 void test();
 void test1();
@@ -64,6 +65,6 @@ void test(){
     }
 }
 void p(){
-    std::string s;
-    std::cout << s[0] << std::endl;
+    std::vector<std::vector<int>>ivec;
+    std::vector<std::string>svec;
 }
