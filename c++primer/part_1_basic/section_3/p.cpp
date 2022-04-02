@@ -65,6 +65,10 @@ void test(){
     }
 }
 void p(){
-    std::vector<std::vector<int>>ivec;
-    std::vector<std::string>svec;
+    const char ca[] = {'h','e','l','l','o'};
+    const char *cp = ca;
+    while(*cp){
+        std::cout << *cp << std::endl;
+        ++cp;
+    }
 }
