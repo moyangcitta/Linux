@@ -69,8 +69,7 @@ int main(){
     tailInsert(list,5);
     tailInsert(list,6);
     print(list);
-    delete(list,3);
-    delete(list,5);
+    delete(list,6);
     print(list);
     return 0;
 }
