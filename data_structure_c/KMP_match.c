@@ -69,7 +69,47 @@ void printString(String* s){
     }
     printf("\n");
 }
+//next数组
+void getNext(int *next, String *s){
+    int j = 0;
+    next[0] = 0;
+    for(int i = 1; i < s->len; i++){
+        while(s->data[i] != s->data[j] && j > 0){
+            j = next[j - 1];
+        }
+        if(s->data[i] == s->data[j]){
+            j++;
+        }
+        next[i] = j;
+    }
+}
 //KMP匹配算法
+void KMP_match(String *s1, String *s2, int *next){
+    int j = 0;
+    for(int i = 0; i < s1->len && j < s2->len; i++){
+        if(s1->data[i] == s2->data[j]){
+            j++;
+        }
+        else{
+            j = next[j - 1];
+            while(j > 0){
+                if(s1->data[i] == s2->data[j]){
+                    j++;
+                    break;
+                }
+                else{
+                    j = next[j - 1];
+                }
+            }
+        }
+    }
+    if(j == s2->len){
+        printf("success\n");
+    }
+    else{
+        printf("fail\n");
+    }
+}
 int main(int argc, char* argv[]){
     String* s1 = initString();
     String* s2 = initString();
@@ -77,5 +117,8 @@ int main(int argc, char* argv[]){
     stringAssign(s2,argv[2]);
     printString(s1);
     printString(s2);
+    int next[s2->len];
+    getNext(next,s2);
+    KMP_match(s1,s2,next);
     return 0;
 }
