@@ -95,7 +95,7 @@ TreeNode* getNext(TreeNode* node){
         //如果是左节点
         else{
             //找右子树的左孩子
-            if(node->parent->ltag == 0){
+            if(node->parent->rtag == 0){
                 return getFirst(node->parent->rchild);
             }
             else{
