@@ -81,7 +81,7 @@ void kruska(Graph* G){
                 G->vexs[edge[i].end], edge[i].weight);
             for(int j = 0; j < G->vexNum; j++){
                 if(connected[j] == end){
-                    //使连通节点与初始节点相同
+                    //使连通节点与初始节点相同 
                     connected[j] = start;
                 }
             }
